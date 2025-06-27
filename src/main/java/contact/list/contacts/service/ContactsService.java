@@ -12,26 +12,31 @@ import contact.list.contacts.repositories.ContactsRepository;
 
 @Service
 public class ContactsService {
-    
+
     @Autowired
     private ContactsRepository repository;
 
     public List<Contacts> getAll() {
         return repository.findAll();
     }
-    
+
     public List<Contacts> getFavorites() {
         return repository.findByIsFavoriteTrue();
     }
 
     public List<Contacts> getByCategory(String category) {
-    return repository.findByCategory(category);
+        return repository.findByCategory(category);
     }
     
+    // Novo método para contatos de emergência
+    public List<Contacts> getEmergencyContacts() {
+        return repository.findByEmergencyTrue();
+    }
+
     public Contacts save(Contacts contacts) {
         return repository.save(contacts);
     }
-    
+
     public void delete(Long id) {
         repository.deleteById(id);
     }
@@ -43,6 +48,10 @@ public class ContactsService {
             existing.setEmail(updatedContact.getEmail());
             existing.setCategory(updatedContact.getCategory());
             existing.setIsFavorite(updatedContact.getIsFavorite());
+            existing.setCity(updatedContact.getCity());
+            existing.setOccupation(updatedContact.getOccupation());
+            existing.setBirthDate(updatedContact.getBirthDate());
+            existing.setEmergency(updatedContact.getEmergency()); 
             return repository.save(existing);
         }).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Contato com ID " + id + " não encontrado"));
     }

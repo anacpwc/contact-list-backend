@@ -19,9 +19,9 @@ import org.springframework.web.bind.annotation.RestController;
 import contact.list.contacts.entities.Contacts;
 import contact.list.contacts.service.ContactsService;
 
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "http://localhost:4200") 
 @RestController
-@RequestMapping("contacts")
+@RequestMapping("/contacts")
 public class ContactsController {
 
     @Autowired
@@ -39,25 +39,31 @@ public class ContactsController {
 
     @GetMapping("/category")
     public ResponseEntity<List<Contacts>> getByCategory(@RequestParam String category) {
-    return ResponseEntity.ok(service.getByCategory(category));
-}
-
+        return ResponseEntity.ok(service.getByCategory(category));
+    }
 
     @PostMapping
-    public ResponseEntity<Contacts> save(@RequestBody Contacts contacts){
-        return ResponseEntity.created(URI.create("contacts/" + contacts.getId()))
-                             .body(service.save(contacts));
+    public ResponseEntity<Contacts> save(@RequestBody Contacts contacts) {
+        Contacts saved = service.save(contacts);
+        URI location = URI.create("/contacts/" + saved.getId());
+        return ResponseEntity.created(location).body(saved);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> delete(@PathVariable Long id){
+    public ResponseEntity<Void> delete(@PathVariable Long id) {
         service.delete(id);
         return ResponseEntity.noContent().build();
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<Contacts> update(@PathVariable Long id, @RequestBody Contacts updatedContact) {
-        Contacts contact = service.update(id, updatedContact);
-        return ResponseEntity.ok(contact);
+        Contacts updated = service.update(id, updatedContact);
+        return ResponseEntity.ok(updated);
     }
+
+    @GetMapping("/emergency")
+    public ResponseEntity<List<Contacts>> getEmergencyContacts() {
+        return ResponseEntity.ok(service.getEmergencyContacts());
+    }
+
 }

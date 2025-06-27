@@ -10,4 +10,7 @@ public interface ContactsRepository extends JpaRepository<Contacts, Long> {
     List<Contacts> findByIsFavoriteTrue();
 
     List<Contacts> findByCategory(String category);
+    
+    // Método para contatos de emergência
+    List<Contacts> findByEmergencyTrue();
 }
