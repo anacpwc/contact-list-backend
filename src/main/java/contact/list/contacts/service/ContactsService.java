@@ -28,7 +28,6 @@ public class ContactsService {
         return repository.findByCategory(category);
     }
     
-    // Novo método para contatos de emergência
     public List<Contacts> getEmergencyContacts() {
         return repository.findByEmergencyTrue();
     }

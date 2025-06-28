@@ -32,8 +32,6 @@ public class Contacts implements Serializable {
 
     private Boolean emergency;
 
-    // Getters e Setters
-
     public Long getId() {
         return id;
     }
@@ -103,8 +101,6 @@ public class Contacts implements Serializable {
     public void setEmergency(Boolean emergency) {
         this.emergency = emergency;
     }
-
-    // hashCode e equals
 
     @Override
     public int hashCode() {
