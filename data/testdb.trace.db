@@ -1,0 +1,15 @@
+2025-06-28 19:31:30.485312-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "TBL_CONTACTS" not found (this database is empty); SQL statement:
+select c1_0.id,c1_0.birth_date,c1_0.category,c1_0.city,c1_0.email,c1_0.emergency,c1_0.is_favorite,c1_0.name,c1_0.number,c1_0.occupation from tbl_contacts c1_0 [42104-232]
+2025-06-28 19:31:31.655216-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "TBL_CONTACTS" not found (this database is empty); SQL statement:
+select c1_0.id,c1_0.birth_date,c1_0.category,c1_0.city,c1_0.email,c1_0.emergency,c1_0.is_favorite,c1_0.name,c1_0.number,c1_0.occupation from tbl_contacts c1_0 [42104-232]
+2025-06-28 19:32:34.318309-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "TBL_CONTACTS" not found (this database is empty); SQL statement:
+select c1_0.id,c1_0.birth_date,c1_0.category,c1_0.city,c1_0.email,c1_0.emergency,c1_0.is_favorite,c1_0.name,c1_0.number,c1_0.occupation from tbl_contacts c1_0 [42104-232]
+2025-06-28 19:32:36.442288-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "TBL_CONTACTS" not found (this database is empty); SQL statement:
+select c1_0.id,c1_0.birth_date,c1_0.category,c1_0.city,c1_0.email,c1_0.emergency,c1_0.is_favorite,c1_0.name,c1_0.number,c1_0.occupation from tbl_contacts c1_0 [42104-232]
+2025-06-28 19:33:15.391055-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "TBL_CONTACTS" not found (this database is empty); SQL statement:
+select c1_0.id,c1_0.birth_date,c1_0.category,c1_0.city,c1_0.email,c1_0.emergency,c1_0.is_favorite,c1_0.name,c1_0.number,c1_0.occupation from tbl_contacts c1_0 [42104-232]
