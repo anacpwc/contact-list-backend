@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 import contact.list.contacts.entities.Contacts;
 import contact.list.contacts.service.ContactsService;
 
-@CrossOrigin(origins = "http://localhost:4200") 
+@CrossOrigin(origins = "https://contactslist.duckdns.org/contacts") 
 @RestController
 @RequestMapping("/contacts")
 public class ContactsController {
